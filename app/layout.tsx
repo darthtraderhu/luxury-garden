@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { GoogleAnalytics } from '@next/third-parties/google'; // Az optimalizált csomag behívása
 
 // Továbbfejlesztett, profi SEO és Megosztás Meta adatok
 export const metadata: Metadata = {
@@ -28,6 +29,10 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
+  // Ha később mégis kell a GSC kód, ide be tudod tenni, de valószínűleg nem fog kelleni (lásd lent)
+  // verification: {
+  //   google: 'IDE_JONN_A_KOD', 
+  // },
 };
 
 export default function RootLayout({
@@ -57,6 +62,10 @@ export default function RootLayout({
           <Footer />
 
         </div>
+
+        {/* GOOGLE ANALYTICS KOMPONENS BEKÖTVE */}
+        <GoogleAnalytics gaId="G-G487GXWENQ" />
+        
       </body>
     </html>
   );
