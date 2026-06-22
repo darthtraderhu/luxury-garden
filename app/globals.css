@@ -116,6 +116,9 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
 .footer-links a { color: #888; text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; display: inline-block; }
 .footer-links a:hover { color: #fff; transform: translateX(5px); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem; font-size: 0.8rem; color: #555; flex-wrap: wrap; gap: 1rem; }
+.gbr-signature { font-family: 'Syncopate', sans-serif; color: #555; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s ease; display: flex; align-items: center; gap: 8px; }
+.gbr-signature span { color: #CCFF00; font-weight: 800; text-shadow: 0 0 8px rgba(204, 255, 0, 0.4); font-size: 0.85rem; }
+.gbr-signature:hover { color: #888; }
 
 /* ========================================= */
 /* 3. FŐOLDAL SZEKCIÓK                       */
@@ -240,7 +243,6 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
 /* ========================================= */
 @media (max-width: 768px) {
   
-  /* 1. Alapok visszaállítása, hogy semmi ne zsugorodjon össze */
   html, body {
     width: 100% !important;
     max-width: 100vw !important;
@@ -249,7 +251,7 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     padding: 0 !important;
   }
 
-  /* 2. Dobozok és konténerek 100% szélességre feszítése */
+  /* MINDEN KONTÉNER 100% SZÉLES + BOX-SIZING FIX */
   .hero-text-content, 
   .bento-item, 
   .showcase-card, 
@@ -259,51 +261,121 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
   .bento-section,
   .monolith-contact,
   .services-cta-banner,
-  .contact-section {
+  .contact-section,
+  .info-card {
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* 3. Normális, esztétikus térközök a széleken (nem vw-vel) */
+  /* KÖZÖS TÉRKÖZÖK (PADDING LEHÚZÁSA, HOGY KIFÉRJEN A SZÖVEG) */
   .bento-section, 
   .services-cta-banner, 
   .contact-section, 
   .monolith-contact {
-    padding: 60px 20px !important;
+    padding: 50px 15px !important;
   }
   
   .inner-hero {
-    padding: 120px 20px 40px 20px !important;
+    padding: 120px 15px 40px 15px !important;
   }
   
   .hero-text-content {
     background: rgba(10, 11, 10, 0.8);
-    padding: 30px 20px !important;
+    padding: 30px 15px !important;
     border-radius: 20px;
     backdrop-filter: blur(15px);
     border: 1px solid rgba(161, 171, 59, 0.2);
   }
 
-  /* 4. Tiszta Szövegtördelés - Semmi kötőjel, normális sortörés */
+  /* ========================================== */
+  /* ALOLDALAK ÉS KAPCSOLAT (ÖSSZENYOMÓDÁS FIX) */
+  /* ========================================== */
+  
+  /* Kapcsolat űrlap doboz (a brutál 64px padding helyett 15px) */
+  .contact-form-wrapper {
+    padding: 30px 15px !important;
+    border-radius: 16px !important;
+    margin-top: 20px !important;
+  }
+
+  /* Aloldal információs kártyák gridje (A-tól Z-ig) */
+  .info-bento-cards {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  /* Aloldal információs kártyák (egymás alá rendezzük az ikont és szöveget) */
+  .info-card {
+    padding: 20px 15px !important;
+    flex-direction: column !important; 
+    text-align: center !important;
+    gap: 15px !important;
+  }
+
+  /* Munkafolyamat lépései (1, 2, 3...) */
+  .process-steps h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+  .step-item {
+    flex-direction: column !important; /* Szám és szöveg egymás alá */
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+  .step-item:not(:last-child)::after {
+    display: none !important; /* Mobilon eltüntetjük a függőleges vonalat */
+  }
+
+  /* Kapcsolat oldal grid (bal szöveg, jobb űrlap egymás alá) */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* ========================================== */
+  /* SZOLGÁLTATÁSOK KÁRTYA FIX                  */
+  /* ========================================== */
+  .services-showcase {
+    padding: 40px 15px !important;
+  }
+  
+  .showcase-row {
+    margin-bottom: 60px !important;
+  }
+
+  .showcase-image-wrapper {
+    height: 250px !important; 
+    border-radius: 16px !important;
+  }
+
+  .showcase-card {
+    width: 100% !important;
+    margin: -40px 0 0 0 !important; 
+    padding: 25px 15px !important; /* LEVETTÜK A BRUTÁLIS MARGÓT */
+    border-radius: 16px !important;
+  }
+
+  /* SZÖVEGTÖRDELÉS TELJES TILTÁSA (Nincs több kötőjel!) */
   h1, h2, h3, p, a, span, .hero-title-outline, .hero-title-solid, .form-title {
     word-break: normal !important;
-    overflow-wrap: break-word !important; /* Szóközöknél törik */
+    overflow-wrap: break-word !important; 
     -webkit-hyphens: none !important;
     hyphens: none !important;
   }
 
-  /* 5. Címsorok méretezése, hogy kiférjenek */
   h1, .hero-title-outline, .hero-title-solid, .inner-hero h1.outline, .inner-hero h1.solid {
     font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
     line-height: 1.2 !important;
   }
   
-  h2, .bento-header h2, .cta-monolith-card h2 {
-    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+  h2, .bento-header h2, .cta-monolith-card h2, .showcase-card h2, .contact-left h2 {
+    font-size: clamp(1.4rem, 7vw, 1.8rem) !important; 
     line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
   }
 
-  /* 6. Bento Grid kártyák 1 oszlopba rendezése */
+  /* BENTO GRID (FŐOLDAL FIX) */
   .bento-grid {
     display: flex !important;
     flex-direction: column !important;
@@ -311,25 +383,25 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
   }
   
   .bento-item {
-    grid-column: span 1 !important; /* Felülírja a széles kártyákat */
+    grid-column: span 1 !important; 
     min-height: 350px !important;
-    padding: 30px 20px !important;
+    padding: 30px 15px !important;
   }
 
-  /* 7. Mobil Menü & UI Fixek */
+  /* MOBIL MENÜ */
   .desktop-nav { display: none !important; }
   .mobile-app-nav { display: flex !important; }
   
   .mobile-app-nav span {
-    white-space: nowrap !important; /* Ne törjön a menü felirata */
+    white-space: nowrap !important;
   }
 
   .floating-phone-btn {
     display: flex !important;
-    bottom: 120px !important; /* Feljebb toljuk a gombot */
+    bottom: 120px !important;
   }
 
-  /* 8. Hős Kép mobilra igazítása */
+  /* FOTÓ FIX */
   .hero-image-floating {
     opacity: 0.5;
     width: 100% !important;
@@ -340,7 +412,7 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     filter: brightness(0.3);
   }
 
-  /* 9. Alsó lábléc elrendezése */
+  /* LÁBLÉC */
   .footer-grid {
     grid-template-columns: 1fr !important;
     gap: 30px !important;
@@ -356,20 +428,24 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     padding-bottom: 40px !important;
   }
   
-  /* Gombok 100% szélesek */
+  /* GOMBOK ÉS KAPCSOLAT MONOLITH */
   .btn-brutal {
     width: 100% !important;
     text-align: center !important;
-    padding: 1.2rem 2rem !important;
+    padding: 1.2rem 1.5rem !important;
+    box-sizing: border-box !important;
   }
   
-  /* Monolith kontakt számok */
   .contact-numbers {
     flex-direction: column !important;
     gap: 15px !important;
   }
   .contact-numbers a {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .cta-monolith-card {
+    padding: 35px 15px !important;
   }
 }
