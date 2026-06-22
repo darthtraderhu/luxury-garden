@@ -21,12 +21,29 @@ export default function FencingPage() {
         </p>
       </section>
 
-      {/* ÚJ: PRÉMIUM GALÉRIA SZEKCIÓ (A 4 számozott képpel) */}
-      <section style={{ padding: '0 5vw 5vw 5vw', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', zIndex: 2, position: 'relative', maxWidth: '1600px', margin: '0 auto' }}>
-        <img src="/images/keritesepites-1.webp" alt="Kerítésépítés folyamata" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', border: '1px solid rgba(161,171,59,0.2)' }} />
-        <img src="/images/keritesepites-2.webp" alt="Prémium zsaluköves kerítés" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', border: '1px solid rgba(161,171,59,0.2)' }} />
-        <img src="/images/keritesepites-3.webp" alt="Modern úszókapu" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', border: '1px solid rgba(161,171,59,0.2)' }} />
-        <img src="/images/keritesepites-4.webp" alt="WPC és fém betétek" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', border: '1px solid rgba(161,171,59,0.2)' }} />
+      {/* ÚJ: PRÉMIUM GALÉRIA SZEKCIÓ (Feszített BENTO stílus, reszponzív) */}
+      <section className="bento-section" style={{ padding: '2vw 5vw 5vw 5vw' }}>
+        <div className="bento-grid" style={{ gridAutoRows: '400px' }}>
+          {/* Első kép - Széles */}
+          <div style={{ gridColumn: 'span 8', position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+            <img src="/images/keritesepites-1.webp" alt="Kerítésépítés folyamata" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }} />
+          </div>
+          
+          {/* Második kép - Keskeny */}
+          <div style={{ gridColumn: 'span 4', position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+            <img src="/images/keritesepites-2.webp" alt="Prémium zsaluköves kerítés" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }} />
+          </div>
+
+          {/* Harmadik kép - Keskeny */}
+          <div style={{ gridColumn: 'span 5', position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+            <img src="/images/keritesepites-3.webp" alt="Modern úszókapu" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }} />
+          </div>
+
+          {/* Negyedik kép - Széles */}
+          <div style={{ gridColumn: 'span 7', position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+            <img src="/images/keritesepites-4.webp" alt="WPC és fém betétek" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }} />
+          </div>
+        </div>
       </section>
 
       {/* SZOLGÁLTATÁS RÉSZLETEK (A meglévő üveghatású kártyákkal) */}
