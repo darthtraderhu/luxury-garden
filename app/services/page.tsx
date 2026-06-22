@@ -9,7 +9,7 @@ export default function Services() {
       <section className="inner-hero animate-up">
         <h1 className="outline">PRÉMIUM</h1>
         <h1 className="solid">KIVITELEZÉS</h1>
-        <p>A tervezőasztaltól az utolsó fűszál elültetéséig és a medence gépészetének beüzemeléséig teljes körű megoldásokat kínálunk. Cégünk 20 év szakmai tapasztalattal a hátunk mögött elkötelezett a prémium minőségű kültéri életterek megteremtése iránt. Ismerd meg 4 fő szolgáltatási területünket, ahol a több évtizedes szaktudás, a minőségi alapanyagok és a legkorszerűbb modern technológia találkozik. Számunkra a kertépítés és medencekivitelezés nem csupán munka, hanem igazi hivatás, amelyet országos lefedettséggel, kompromisszumok nélkül végzünk.</p>
+        <p>A tervezőasztaltól az utolsó fűszál elültetéséig és a medence gépészetének beüzemeléséig teljes körű megoldásokat kínálunk. Cégünk 20 év szakmai tapasztalattal a hátunk mögött elkötelezett a prémium minőségű kültéri életterek megteremtése iránt. Ismerd meg 5 fő szolgáltatási területünket, ahol a több évtizedes szaktudás, a minőségi alapanyagok és a legkorszerűbb modern technológia találkozik. Számunkra a kertépítés és medencekivitelezés nem csupán munka, hanem igazi hivatás, amelyet országos lefedettséggel, kompromisszumok nélkül végzünk.</p>
       </section>
 
       <div className="architectural-divider">
@@ -65,6 +65,18 @@ export default function Services() {
             <h2>Tereprendezés & Földmunka</h2>
             <p>Minden professzionális és tartós kivitelezési projekt alapja a hajszálpontosan megtervezett és tökéletesen előkészített terep. Saját, modern és nagy teljesítményű gépparkkal, valamint évtizedes tapasztalattal rendelkező gépkezelőkkel végezzük a komplex tereprendezést, az árokásást, az alapok és medencék precíz tükörkészítését, illetve a felesleges föld- és törmelék szakszerű elszállítását.</p>
             <Link href="/services/foldmunka" className="btn-brutal">Részletek megtekintése</Link>
+          </div>
+        </div>
+
+        {/* 5. KERÍTÉSÉPÍTÉS & ÚSZÓKAPUK (HELYI WEBP) */}
+        <div className="showcase-row row-left animate-up">
+          <div className="showcase-image-wrapper">
+            <img src="/images/keritesepites.webp" alt="Kerítésépítés és Automata Úszókapuk" />
+          </div>
+          <div className="showcase-card">
+            <h2>Kerítésépítés & Úszókapuk</h2>
+            <p>Az ingatlan biztonsága, privát szférája és eleganciája a telekhatáron kezdődik. Komplett kerítésrendszerek kivitelezését vállaljuk a sávalap kiásásától, zsalukövezéstől és vasalástól kezdve a gondozásmentes fém vagy WPC betétek beépítéséig. Emellett milliméter pontos futású, egyedi úszó- és tolókapukat gyártunk, amelyeket a piacvezető gyártók csendes okosmotorjaival automatizálunk.</p>
+            <Link href="/services/keritesepites" className="btn-brutal">Részletek megtekintése</Link>
           </div>
         </div>
 
