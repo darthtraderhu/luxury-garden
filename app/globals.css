@@ -345,12 +345,12 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     -webkit-hyphens: auto !important;
     hyphens: auto !important;
     white-space: normal !important;
-    /* Kicsit visszavesszük a betűméretet, hogy kiférjenek a nagy szavak */
     font-size: clamp(1.5rem, 8vw, 2.2rem) !important; 
     line-height: 1.2 !important;
   }
   
-  p, span, div {
+  /* Csak a bekezdések törjenek, NE a teljes UI (span, div) */
+  p {
     word-break: break-word;
     overflow-wrap: break-word;
     max-width: 100vw;
@@ -359,5 +359,17 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
   .inner-hero {
     padding-left: 15px !important;
     padding-right: 15px !important;
+  }
+
+  /* MOBIL MENÜ VÉDELME */
+  .mobile-app-nav span {
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    white-space: nowrap !important;
+    hyphens: none !important;
+  }
+
+  .floating-phone-btn {
+    bottom: 120px !important; /* Feljebb toljuk, hogy ne lógjon rá a menüre */
   }
 }
