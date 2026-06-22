@@ -329,3 +329,35 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
   .footer-brand p { margin: 0 auto; }
   .footer-bottom { flex-direction: column; text-align: center; justify-content: center; gap: 1.5rem; padding-bottom: 30px; }
 }
+
+/* ========================================= */
+/* 6. MOBIL SZÖVEG KICSÚSZÁS FIX             */
+/* ========================================= */
+@media (max-width: 768px) {
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden !important;
+  }
+  
+  h1, h2, h3, .hero-title-outline, .hero-title-solid, .inner-hero h1.outline, .inner-hero h1.solid, .cta-monolith-card h2, .form-title {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    -webkit-hyphens: auto !important;
+    hyphens: auto !important;
+    white-space: normal !important;
+    /* Kicsit visszavesszük a betűméretet, hogy kiférjenek a nagy szavak */
+    font-size: clamp(1.5rem, 8vw, 2.2rem) !important; 
+    line-height: 1.2 !important;
+  }
+  
+  p, span, div {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100vw;
+  }
+  
+  .inner-hero {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
