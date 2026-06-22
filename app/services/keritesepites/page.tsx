@@ -21,6 +21,14 @@ export default function FencingPage() {
         </p>
       </section>
 
+      {/* ÚJ: PRÉMIUM GALÉRIA SZEKCIÓ (A 4 számozott képpel) */}
+      <section style={{ padding: '0 5vw 5vw 5vw', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', zIndex: 2, position: 'relative', maxWidth: '1600px', margin: '0 auto' }}>
+        <img src="/images/keritesepites-1.webp" alt="Kerítésépítés folyamata" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', border: '1px solid rgba(161,171,59,0.2)' }} />
+        <img src="/images/keritesepites-2.webp" alt="Prémium zsaluköves kerítés" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', border: '1px solid rgba(161,171,59,0.2)' }} />
+        <img src="/images/keritesepites-3.webp" alt="Modern úszókapu" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', border: '1px solid rgba(161,171,59,0.2)' }} />
+        <img src="/images/keritesepites-4.webp" alt="WPC és fém betétek" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', border: '1px solid rgba(161,171,59,0.2)' }} />
+      </section>
+
       {/* SZOLGÁLTATÁS RÉSZLETEK (A meglévő üveghatású kártyákkal) */}
       <section className="contact-section" style={{ paddingTop: '2vw' }}>
         <div className="info-bento-cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>

@@ -67,6 +67,16 @@ export default function Home() {
               <p>Szakszerű gépi földmunka, árokásás és precíz tereprendezés. Saját, modern gépparkkal rendelkezünk, a legnehezebb terepviszonyok sem akadályok.</p>
             </div>
           </Link>
+
+          {/* 5. ÚJ KÁRTYA: KERÍTÉSÉPÍTÉS (Teljes szélességű) */}
+          <Link href="/services/keritesepites" className="bento-item" style={{ gridColumn: 'span 12' }}>
+            <img src="/images/keritesepites.webp" alt="Prémium Kerítésépítés" className="bento-bg" />
+            <div className="bento-content">
+              <h3>Kerítésépítés & Úszókapuk</h3>
+              <p>Zárd ki a külvilágot stílusosan, kompromisszummentes határoló rendszerekkel. A zsaluköves alapoktól a WPC betéteken át az okos kapuautomatizálásig mindent egy kézben tartunk.</p>
+            </div>
+          </Link>
+
         </div>
       </section>
 
