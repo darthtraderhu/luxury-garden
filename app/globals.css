@@ -169,7 +169,7 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
 .hero-title-outline:hover { -webkit-text-stroke: 2px rgba(161, 171, 59, 0.8); text-shadow: 0 0 30px rgba(161, 171, 59, 0.2); }
 .hero-title-solid { font-size: clamp(2.5rem, 8vw, 7rem); color: #A1AB3B; line-height: 0.9; letter-spacing: -2px; margin-bottom: 2rem; }
 .hero-subtitle { max-width: 600px; font-size: 1.1rem; color: #a0a0a0; line-height: 1.8; border-left: 3px solid #A1AB3B; padding-left: 1.5rem; margin-bottom: 3rem; background: linear-gradient(90deg, rgba(161, 171, 59, 0.05) 0%, transparent 100%); padding-top: 10px; padding-bottom: 10px; }
-.hero-image-floating { position: absolute; top: 15%; right: 5%; width: 45vw; height: 70vh; background: url('https://luxurygarden.hu/wp-content/uploads/2025/10/luxury-garden-scaled.jpg') center/cover; border-radius: 300px 0 300px 0; z-index: 1; filter: brightness(0.5) contrast(1.2); box-shadow: -30px 30px 0px rgba(161, 171, 59, 0.1); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease; opacity: 0; animation: fadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards; }
+.hero-image-floating { position: absolute; top: 15%; right: 5%; width: 45vw; height: 70vh; background: url('/images/kert-1.webp') center/cover; border-radius: 300px 0 300px 0; z-index: 1; filter: brightness(0.5) contrast(1.2); box-shadow: -30px 30px 0px rgba(161, 171, 59, 0.1); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease; opacity: 0; animation: fadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards; }
 .hero-kinetic:hover .hero-image-floating { transform: translate(-15px, -15px); filter: brightness(0.7) contrast(1.2); }
 
 .bento-section { padding: 8vw 5vw; position: relative; z-index: 2; }
@@ -225,7 +225,7 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
 
 /* --- KAPCSOLAT & MONOLITH --- */
 .monolith-contact { position: relative; padding: 10vw 5vw 12vw 5vw; display: flex; align-items: center; justify-content: center; background-color: #030403; overflow: hidden; z-index: 2; scroll-margin-top: 50px; }
-.monolith-contact::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://luxurygarden.hu/wp-content/uploads/2025/04/custom-img-020-copyright.jpg') center/cover fixed; opacity: 0.1; z-index: 0; }
+.monolith-contact::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('/images/kert-1.webp') center/cover fixed; opacity: 0.1; z-index: 0; }
 .marquee-bg { position: absolute; top: 50%; left: 0; transform: translateY(-50%); white-space: nowrap; font-family: 'Syncopate', sans-serif; font-size: clamp(6rem, 10vw, 15rem); font-weight: 800; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03); z-index: 0; pointer-events: none; animation: scrollMarquee 40s linear infinite; }
 @keyframes scrollMarquee { 0% { transform: translate(0%, -50%); } 100% { transform: translate(-50%, -50%); } }
 .cta-monolith-card { position: relative; z-index: 2; background: rgba(10, 11, 10, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(161, 171, 59, 0.2); border-radius: 24px; padding: 5rem; text-align: center; max-width: 900px; width: 100%; box-shadow: 0 30px 60px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.05); }
