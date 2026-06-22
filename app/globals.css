@@ -285,53 +285,8 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 768px) {
-  .desktop-nav { display: none; }
-  .mobile-app-nav { display: flex; }
-  .floating-phone-btn { display: flex; } 
-  .hero-logo-mobile { display: block; }
-  body { padding-bottom: 90px; }
-  
-  .hero-text-content { background: rgba(10, 11, 10, 0.8); padding: 2.5rem 1.5rem; border-radius: 20px; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(161, 171, 59, 0.2); }
-  .hero-image-floating { opacity: 0.5; width: 100%; height: 100%; top: 0; left: 0; border-radius: 0; filter: brightness(0.3); }
-  .hero-title-outline, .hero-title-solid { font-size: clamp(1.8rem, 10vw, 3.2rem); -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6); }
-  .hero-subtitle { padding-left: 1rem; border-left-width: 2px; font-size: 1rem; }
-  .btn-brutal { width: 100%; text-align: center; padding: 1.2rem 2rem; }
-  
-  .bento-section { padding: 15vw 5vw; }
-  .bento-bg { filter: grayscale(40%) brightness(0.4); }
-  
-  .inner-hero { padding: 120px 20px 40px 20px; }
-  .inner-hero h1.outline, .inner-hero h1.solid { font-size: clamp(2rem, 10vw, 3.2rem); -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6); }
-
-  .showcase-image-wrapper { height: 300px; border-radius: 16px; }
-  .showcase-card { width: 95%; margin: -50px auto 0 auto !important; padding: 2rem 1.5rem; border-radius: 16px; }
-  
-  .services-cta-banner { padding: 15vw 5vw; }
-  .cta-content-left h2 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
-  .availability-badge { margin: 0 auto 2rem auto; }
-  .cta-panel-right { padding: 3rem 1.5rem; }
-  .cta-panel-right .contact-numbers a { font-size: 2rem; }
-  .cta-watermark { font-size: 6rem; }
-  
-  .contact-section { padding: 5vw 5vw 15vw 5vw; }
-  .contact-form-wrapper { padding: 2.5rem 1.5rem; border-radius: 16px; }
-  .form-title { font-size: 1.4rem; }
-  .info-card { flex-direction: column; text-align: center; gap: 1rem; padding: 2rem; }
-
-  .cta-monolith-card { padding: 2.5rem 1.5rem; }
-  .cta-monolith-card h2 { font-size: clamp(1.6rem, 7vw, 2.5rem); }
-  .contact-numbers { flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
-  .contact-numbers a { font-size: 2rem; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8); }
-  .marquee-bg { font-size: 4rem; }
-  
-  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
-  .footer-brand p { margin: 0 auto; }
-  .footer-bottom { flex-direction: column; text-align: center; justify-content: center; gap: 1.5rem; padding-bottom: 30px; }
-}
-
 /* ========================================= */
-/* 6. MOBIL SZÖVEG KICSÚSZÁS FIX             */
+/* 6. MOBIL SZÖVEG KICSÚSZÁS FIX ÉS VÉDELEM  */
 /* ========================================= */
 @media (max-width: 768px) {
   html, body {
@@ -339,20 +294,23 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     overflow-x: hidden !important;
   }
   
+  /* CÍMSOROK VÉDELME: NINCS KÖTŐJELEZÉS! */
   h1, h2, h3, .hero-title-outline, .hero-title-solid, .inner-hero h1.outline, .inner-hero h1.solid, .cta-monolith-card h2, .form-title {
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
-    -webkit-hyphens: auto !important;
-    hyphens: auto !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important; /* Csak szóközöknél törjön */
+    -webkit-hyphens: none !important; /* Tilos a kötőjel */
+    hyphens: none !important; /* Tilos a kötőjel */
     white-space: normal !important;
-    font-size: clamp(1.5rem, 8vw, 2.2rem) !important; 
-    line-height: 1.2 !important;
+    font-size: clamp(1.4rem, 7vw, 2.1rem) !important; /* Picit kisebb, hogy egyben kiférjen */
+    line-height: 1.3 !important;
   }
   
-  /* Csak a bekezdések törjenek, NE a teljes UI (span, div) */
-  p {
-    word-break: break-word;
-    overflow-wrap: break-word;
+  /* Sima bekezdések is védve */
+  p, span, div {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    -webkit-hyphens: none !important;
+    hyphens: none !important;
     max-width: 100vw;
   }
   
@@ -361,7 +319,7 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     padding-right: 15px !important;
   }
 
-  /* MOBIL MENÜ VÉDELME */
+  /* MOBIL MENÜ KIMERETESÍTÉSE */
   .mobile-app-nav span {
     word-break: normal !important;
     overflow-wrap: normal !important;
@@ -370,6 +328,6 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
   }
 
   .floating-phone-btn {
-    bottom: 120px !important; /* Feljebb toljuk, hogy ne lógjon rá a menüre */
+    bottom: 120px !important; /* Gombot feljebb húzzuk, ne lógjon a menüre */
   }
 }
