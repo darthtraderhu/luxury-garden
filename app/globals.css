@@ -61,7 +61,7 @@ body {
 /* FŐ CÍMSOROK (ASZTALI NÉZET) */
 h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-monolith-card h2, .contact-left h2, .form-title { 
   font-family: 'Syncopate', sans-serif; text-transform: uppercase; margin: 0; 
-  -webkit-hyphens: none !important; -ms-hyphens: none !important; hyphens: none !important; word-break: normal !important; overflow-wrap: normal !important;
+  -webkit-hyphens: none; -ms-hyphens: none; hyphens: none; word-break: normal; overflow-wrap: normal;
 }
 
 .btn-brutal { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: #A1AB3B; font-family: 'Syncopate', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; padding: 1.5rem 3.5rem; border: 1px solid #A1AB3B; border-radius: 100px; cursor: pointer; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); z-index: 1; letter-spacing: 2px; text-decoration: none; }
@@ -267,16 +267,16 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     box-sizing: border-box !important;
   }
 
-  /* KÖZÖS TÉRKÖZÖK (PADDING LEHÚZÁSA, HOGY KIFÉRJEN A SZÖVEG) */
+  /* KÖZÖS TÉRKÖZÖK */
   .bento-section, 
   .services-cta-banner, 
   .contact-section, 
   .monolith-contact {
-    padding: 50px 15px !important;
+    padding: 40px 15px !important;
   }
   
   .inner-hero {
-    padding: 120px 15px 40px 15px !important;
+    padding: 100px 15px 30px 15px !important;
   }
   
   .hero-text-content {
@@ -291,20 +291,17 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
   /* ALOLDALAK ÉS KAPCSOLAT (ÖSSZENYOMÓDÁS FIX) */
   /* ========================================== */
   
-  /* Kapcsolat űrlap doboz (a brutál 64px padding helyett 15px) */
   .contact-form-wrapper {
-    padding: 30px 15px !important;
+    padding: 25px 15px !important;
     border-radius: 16px !important;
     margin-top: 20px !important;
   }
 
-  /* Aloldal információs kártyák gridje (A-tól Z-ig) */
   .info-bento-cards {
     grid-template-columns: 1fr !important;
     gap: 15px !important;
   }
 
-  /* Aloldal információs kártyák (egymás alá rendezzük az ikont és szöveget) */
   .info-card {
     padding: 20px 15px !important;
     flex-direction: column !important; 
@@ -312,22 +309,20 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     gap: 15px !important;
   }
 
-  /* Munkafolyamat lépései (1, 2, 3...) */
   .process-steps h3 {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
     margin-bottom: 2rem !important;
   }
   .step-item {
-    flex-direction: column !important; /* Szám és szöveg egymás alá */
+    flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
     gap: 10px !important;
   }
   .step-item:not(:last-child)::after {
-    display: none !important; /* Mobilon eltüntetjük a függőleges vonalat */
+    display: none !important;
   }
 
-  /* Kapcsolat oldal grid (bal szöveg, jobb űrlap egymás alá) */
   .contact-grid {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
@@ -351,12 +346,12 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
 
   .showcase-card {
     width: 100% !important;
-    margin: -40px 0 0 0 !important; 
+    margin: -30px 0 0 0 !important; 
     padding: 25px 15px !important; /* LEVETTÜK A BRUTÁLIS MARGÓT */
     border-radius: 16px !important;
   }
 
-  /* SZÖVEGTÖRDELÉS TELJES TILTÁSA (Nincs több kötőjel!) */
+  /* SZÖVEGTÖRDELÉS TELJES KISIMÍTÁSA */
   h1, h2, h3, p, a, span, .hero-title-outline, .hero-title-solid, .form-title {
     word-break: normal !important;
     overflow-wrap: break-word !important; 
@@ -364,15 +359,21 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     hyphens: none !important;
   }
 
+  /* CÍMSOR MÉRETEK FINOMHANGOLÁSA HOGY KIFÉRJEN A "K" BETŰ IS */
   h1, .hero-title-outline, .hero-title-solid, .inner-hero h1.outline, .inner-hero h1.solid {
-    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
     line-height: 1.2 !important;
   }
   
-  h2, .bento-header h2, .cta-monolith-card h2, .showcase-card h2, .contact-left h2 {
-    font-size: clamp(1.4rem, 7vw, 1.8rem) !important; 
+  h2, .bento-header h2, .cta-monolith-card h2, .showcase-card h2, .contact-left h2, .info-card-content h4 {
+    font-size: clamp(1.2rem, 6vw, 1.6rem) !important; /* Kisebbre véve, hogy az ÖNTÖZŐRENDSZEREK is egy sorban legyen */
     line-height: 1.3 !important;
     margin-bottom: 1rem !important;
+  }
+
+  p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
   }
 
   /* BENTO GRID (FŐOLDAL FIX) */
@@ -434,6 +435,7 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     text-align: center !important;
     padding: 1.2rem 1.5rem !important;
     box-sizing: border-box !important;
+    font-size: 0.85rem !important;
   }
   
   .contact-numbers {
@@ -441,7 +443,7 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
     gap: 15px !important;
   }
   .contact-numbers a {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8) !important;
   }
 
