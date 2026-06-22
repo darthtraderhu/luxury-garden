@@ -17,6 +17,8 @@ export default function Footer() {
             <li><Link href="/services/medenceepites">Prémium Medenceépítés</Link></li>
             <li><Link href="/services/terkovezes">Térkövezés & Támfalak</Link></li>
             <li><Link href="/services/foldmunka">Gépi Földmunka</Link></li>
+            {/* ÚJ: KERÍTÉSÉPÍTÉS LINK HOZZÁADVA */}
+            <li><Link href="/services/keritesepites">Kerítésépítés & Úszókapuk</Link></li>
           </ul>
         </div>
 

@@ -84,6 +84,53 @@ h1, h2, h3, .hero-logo-mobile, .hero-title-outline, .hero-title-solid, .cta-mono
 .nav-btn { display: inline-block; font-family: 'Syncopate', sans-serif; font-size: 0.75rem; font-weight: 700; color: #030403; background: #A1AB3B; text-decoration: none; text-transform: uppercase; padding: 12px 24px; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(161, 171, 59, 0.2); white-space: nowrap; }
 .nav-btn:hover { background: #fff; box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3); }
 
+/* --- NAVBAR DROPDOWN STÍLUSOK --- */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(10px);
+  min-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  z-index: 100;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu a {
+  color: #fff !important;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.dropdown-menu a::after {
+  display: none; /* A lenyílóban ne legyen alsó vonal animáció */
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  opacity: 1;
+  color: #A1AB3B !important; 
+}
+
 .mobile-app-nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 450px; background: rgba(10, 11, 10, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(161, 171, 59, 0.3); border-radius: 60px; display: none; justify-content: space-between; align-items: center; padding: 10px 20px; z-index: 9999; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9); }
 .app-nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #666; text-decoration: none; transition: all 0.3s ease; padding: 5px; width: 25%; }
 .app-nav-item svg { width: 24px; height: 24px; margin-bottom: 4px; stroke: currentColor; transition: all 0.3s ease; }
